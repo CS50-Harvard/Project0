@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stats</title>
+    <meta name="viewport" content="device-width, intial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      // Load google charts
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Draw the chart and set the chart values
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['Record', 'Count'],
+        ['Sixes', 1280],
+        ['Fours', 1470],
+        ['Bowled', 230],
+        ['Catch Out', 425],
+        ['Run Out', 112],
+        ['Stumped', 87]
+      ]);
+
+        // Optional; add a title and set the width and height of the chart
+        var options = {'width':550, 'height':400};
+
+        // Display the chart inside the <div> element with id="piechart"
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Header Section Begins -->
+    <div class="top-nav">
+      <a href="#">Indian Premier League</a>
+      <div class="top-nav-right">
+        <a href="stats.html" class="active">Stats</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="teams.html">Teams</a>
+        <a href="index.html">Home</a>
+      </div>
+    </div>
+    <!-- Header Section Ends -->
+    <!-- Stats Section Begins -->
+    <div id="heading">
+      Records
+    </div>
+    <center>
+      <div id="piechart"></div>
+    </center>
+    <!-- Stats Section Ends -->
+  </body>
+</html>
